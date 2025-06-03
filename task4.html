@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+         button {
+    font-size: 20px; /* Increase text size */
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: #007bff;
+    color: black;
+    cursor: pointer;
+}
+
+/* Centering the button */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    gap: 20px;
+}
+.container input {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Dynamic List (Add & Remove Items)</h2>
+        <input type="text" id="itemInput" placeholder="Enter item">
+        <button onclick="addItem()">Add Item</button>
+        <ul id="itemList">
+        </ul>
+    
+    </div>
+   
+    <script>
+        // Function to add a new item to the list
+        function addItem() {
+            let input = document.getElementById("itemInput"); // Get input field
+            let list = document.getElementById("itemList"); // Get the list container
+            let itemText = input.value.trim(); // Trim whitespace from input
+           
+             
+            // Check if input is not empty
+            if (itemText === "") {
+                alert("Please enter an item!");
+                return;
+            }
+
+            let li = document.createElement("li"); // Create a new list item
+            li.textContent = itemText; // Set the text of the list item
+            li.style.fontSize="25px";
+
+            // Create a remove button for each list item
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.style.marginLeft = "10px"; // Add some space
+            removeBtn.onclick = function () {
+                list.removeChild(li); // Remove the item when button is clicked
+            };
+
+            li.appendChild(removeBtn); // Attach remove button to list item
+            list.appendChild(li); // Add new item to the list
+            input.value = ""; // Clear input field after adding item
+        }
+    </script>
+</body>
+</html>

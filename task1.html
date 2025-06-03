@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <style>
+        button {
+    font-size: 20px; /* Increase text size */
+    padding: 15px 30px; /* Increase button size */
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: #007bff;
+    color: black;
+    cursor: pointer;
+}
+button :hover{
+    background-color: transparent;
+}
+
+/* Centering the button */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="container"> <button onclick="changeColor()">Change Background Color</button>
+    </div>
+   
+    <script>
+        function changeColor() {
+            const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show & Hide Password</title>
+    <style>
+        body{
+            background-color: paleturquoise;
+            animation: backgroundAnimation 5s infinite alternate;
+   
+         }
+       @keyframes backgroundAnimation {
+          0% {
+      background-color: plum; /* Blue */
+          }
+          50% {
+      background-color: palegreen; /* Red */
+       }
+          100% {
+      background-color: paleturquoise; /* Green */
+    }
+  }
+        /* Centering the form */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Styling for input boxes */
+       .container input {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        } 
+
+        /* Wrapper for password input & button */
+        .password-container {
+            display: flex;
+            align-items: center;
+            width: 200px;
+        }
+
+        /* Styling for the button */
+        button {
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1>Hiding and showing password</h1>
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" required>
+        
+        <div class="password-container">
+            <input type="password" placeholder="enter password"  id="password">
+            <button onclick="Password()">Show</button>
+        </div>
+    </div>
+    
+    <script>
+        function Password() {
+            let input = document.getElementById("password");
+            let button = event.target;
+            if (input.type === "password") {
+                input.type = "text";
+                button.innerText = "Hide";
+            } else {
+                input.type = "password";
+                button.innerText = "Show";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

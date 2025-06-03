@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Counter</title>
+    <style>
+
+         button {
+    font-size: 20px; /* Increase text size */
+    padding: 15px 30px; /* Increase button size */
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: #007bff;
+    color: black;
+    cursor: pointer;
+  }
+  h2{
+    font-size: 30px;
+  }
+  body{
+    background-color: palegoldenrod;
+  }
+
+
+/* Centering the button */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+}
+
+#wrd{
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h2>click counter</h2>
+        <button onclick="increaseCount()">Click Me</button>
+        <p id="wrd">Button Clicked: <span id="count">0</span> times</p>
+    </div>
+  
+    <script>
+        let count = 0;
+        function increaseCount() {
+            count++;
+            document.getElementById("count").innerText = count;
+        }
+    </script>
+</body>
+</html>
